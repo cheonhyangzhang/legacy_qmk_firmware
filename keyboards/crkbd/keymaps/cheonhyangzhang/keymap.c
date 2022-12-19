@@ -10,7 +10,6 @@ enum tap_dance_codes {
   MINUS_UNDERSCORE,
   EQUAL_PLUS,
   A_CTL,
-  SLACK_ADDRESS,
 };
 // tap dance section end
 
@@ -51,8 +50,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // KC_TAB is working good, once get used to it, this becomes a natrual location for tab, and easy to press.
   // LGUI(KC_F) is put at the d because more accesible f is left for more important ESC
   // ESC is important due to heavy vim usage and place f is easy enough to use
-  // TD(SLACK_ADDRESS) is used for cmd k and cmd l, this is to save space, so cmd k opens search in slack and
-  //   cmd l focus to address bar in a browser
   // LCTL(KC_H) is due to heavy tmux user, tmux start key is ctrl H, hence put in the most accessible j location
   // MINUS_UNDERSCORE provides - and _, EQUAL_PLUS provides = and +,
   // KC_BSPC provides backspace in normal cases, when two hands are on the keyboard
@@ -60,8 +57,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // two KC_NO can be used later, left of LGUI(KC_Z) and right of LGUI(KC_SPC)
   [1] = LAYOUT_split_3x6_3(
     LGUI(KC_W),       KC_NO,      LGUI(KC_S), LGUI(LSFT(KC_P)), LGUI(KC_R), TD(CMD_T_SFT),        KC_CIRC,      KC_AMPR,    KC_LPRN,              KC_RPRN,        KC_NO,   LGUI(KC_BSPC),
-    LGUI(KC_TAB),     LGUI(KC_A), KC_TAB,     LGUI(KC_F),       KC_ESC,     TD(SLACK_ADDRESS),    KC_ASTR,      LCTL(KC_H), TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCOLON,
-    LGUI(LSFT(KC_4)), LGUI(KC_Z), LGUI(KC_X), LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),           KC_BSPC,      KC_LBRC,    KC_RBRC,              KC_LCBR,        KC_RCBR, KC_NO,
+    LGUI(KC_TAB),     LGUI(KC_A), KC_TAB,     LGUI(KC_F),       KC_ESC,     LGUI(Kc_K),    KC_ASTR,      LCTL(KC_H), TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCOLON,
+    LGUI(LSFT(KC_4)), LGUI(KC_Z), LGUI(KC_X), LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),           KC_BSPC,      KC_LBRC,    KC_RBRC,              KC_LCBR,        KC_RCBR, LGUI(KC_L),
                                             KC_NO,            KC_NO,      KC_NO,                LGUI(KC_SPC), KC_NO,      KC_NO
   ),
   // navigation layer
@@ -445,7 +442,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
         [MINUS_UNDERSCORE] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_6, dance_6_finished, dance_6_reset),
         [EQUAL_PLUS] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_7, dance_7_finished, dance_7_reset),
         [A_CTL] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_8, dance_8_finished, dance_8_reset),
-        [SLACK_ADDRESS] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_10, dance_10_finished, dance_10_reset),
 };
 // tap dance operations end
 
