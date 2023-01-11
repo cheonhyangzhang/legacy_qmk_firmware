@@ -3,8 +3,6 @@
 #include <stdio.h>
 // tap dance section start
 enum tap_dance_codes {
-  I_QUOT,
-  O_LSFT_QUOT,
   CMD_T_SFT,
   CMD_V_SHIFT,
   MINUS_UNDERSCORE,
@@ -33,9 +31,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // MO(2) provides navigation layer
   // KC_RSHIFT is not often used
   [0] = LAYOUT_split_3x6_3(
-    KC_LGUI,  KC_LALT, KC_W, KC_E,  KC_R,    KC_T,    KC_Y,   KC_U,  TD(I_QUOT), TD(O_LSFT_QUOT), KC_NO,    KC_BSPC,
+    KC_LGUI,  KC_LALT, KC_W, KC_E,  KC_R,    KC_T,    KC_Y,   KC_U,  KC_I,       KC_O, KC_NO,    KC_BSPC,
     KC_Q,     KC_A,    KC_S, KC_D,  KC_F,    KC_G,    KC_H,   KC_J,  KC_K,       KC_L,            KC_ENT,   KC_P,
-    KC_LCTRL, KC_Z,    KC_X, KC_C,  KC_V,    KC_B,    KC_N,   KC_M,  KC_COMM,    KC_DOT,          KC_SLASH, TO(4),
+    KC_LCTRL, KC_Z,    KC_X, KC_C,  KC_V,    KC_B,    KC_N,   KC_M,  KC_COMM,    KC_DOT,          KC_SLASH, KC_QUOT
                              MO(3), KC_LSFT, MO(1),   KC_SPC, MO(2), KC_RSHIFT
   ),
   // command layer
@@ -79,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // LGUI(KC_I) open workspace switcher in mac
   // KC_END go to the end of text
   [2] = LAYOUT_split_3x6_3(
-     LCTL(LGUI(KC_Q)),        KC_NO,      KC_2,  KC_3,    KC_4,    KC_5,     LGUI(KC_GRV),    LGUI(KC_U),    KC_UP,      LGUI(KC_O),    KC_NO,      LGUI(KC_W),
+     LCTL(LGUI(KC_Q)),        KC_NO,      KC_2,  KC_3,    KC_4,    KC_5,     LGUI(KC_GRV),    LGUI(KC_U),    KC_UP,      LGUI(KC_O),    TO(4),      LGUI(KC_W),
      KC_1,         KC_EXLM,    KC_AT, KC_HASH, KC_DLR,  KC_PERC,  KC_HOME,         KC_LEFT,       KC_DOWN,    KC_RGHT,       LGUI(KC_Y), LGUI(LSFT(KC_4)),
      LCTL(KC_SPC), LGUI(KC_1), KC_NO, KC_NO,   KC_TILD, KC_GRV,   LALT(KC_BSPACE), LALT(KC_LEFT), LGUI(KC_I), LALT(KC_RGHT), KC_END,     KC_NO,
                                       KC_NO,   KC_NO,   KC_NO,    KC_NO,           KC_TRNS,       KC_NO
@@ -99,13 +97,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //left hand
   [4] = LAYOUT_split_3x6_3(
   //,--------------------------------------.    ,--------------------------------------------|
-      KC_NO, LGUI(KC_A), LGUI(KC_W), KC_BSPC, KC_TAB, KC_NO,     LGUI(KC_UP), LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_BSPC,
+      TO(0), LGUI(KC_A), LGUI(KC_W), KC_BSPC, KC_TAB, KC_NO,     LGUI(KC_UP), LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_BSPC,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
       LGUI(KC_A), KC_LSFT, KC_LGUI, LGUI(KC_C), LALT(LGUI(KC_V)), LGUI(KC_V),     KC_X, KC_LEFT, KC_DOWN, KC_RGHT, LGUI(KC_Z), KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
       KC_NO, LGUI(KC_Z), KC_X, KC_HASH, KC_ENT, LGUI(KC_BSPC),       LGUI(KC_DOWN), LGUI(KC_C), LALT(LGUI(KC_V)), LGUI(KC_BSPC), KC_NO, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-                          TO(0), KC_NO, KC_SPC, KC_SPC, KC_NO, KC_NO
+                          KC_NO, KC_NO, KC_SPC, KC_SPC, KC_NO, KC_NO
                   //`--------------------------'  `----------------------'
   ),
   [5] = LAYOUT_split_3x6_3(
@@ -435,8 +433,6 @@ void dance_10_reset(qk_tap_dance_state_t *state, void *user_data) {
 
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-        [I_QUOT] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_1, dance_1_finished, dance_1_reset),
-        [O_LSFT_QUOT] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_2, dance_2_finished, dance_2_reset),
         [CMD_T_SFT] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_4, dance_4_finished, dance_4_reset),
         [CMD_V_SHIFT] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_5, dance_5_finished, dance_5_reset),
         [MINUS_UNDERSCORE] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_6, dance_6_finished, dance_6_reset),
