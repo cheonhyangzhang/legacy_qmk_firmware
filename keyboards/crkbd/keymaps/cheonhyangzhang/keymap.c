@@ -85,11 +85,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // nums
   [3] = LAYOUT_split_3x6_3(
   //,--------------------------------------.    ,--------------------------------------------|
-      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_PGUP, KC_7, KC_8, KC_9, KC_NO, LGUI(KC_Q),
+      KC_NO, KC_NO, LGUI(KC_MINS), KC_NO, LGUI(KC_PLUS), KC_NO,     KC_PGUP, KC_7, KC_8, KC_9, KC_NO, LGUI(KC_Q),
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      KC_NO, KC_NO, LGUI(KC_LBRC), KC_NO, LGUI(KC_RBRC), LGUI(KC_L),     KC_PGDN, KC_4, KC_5, KC_6, KC_PIPE, KC_BSLS,
+      KC_NO, KC_NO, LGUI(KC_LBRC), KC_NO, LGUI(KC_RBRC), KC_NO,     KC_PGDN, KC_4, KC_5, KC_6, KC_PIPE, KC_BSLS,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      KC_NO, KC_NO, LGUI(KC_MINS), KC_NO, LGUI(KC_PLUS), LGUI(KC_BSPC),     KC_NO, KC_1, KC_2, KC_3, TO(0), KC_NO,
+      KC_NO, LCTL(KC_1), LCTL(KC_2), LCTL(KC_3), LCTL(KC_4), LCTL(KC_5),     KC_NO, KC_1, KC_2, KC_3, TO(0), KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
                         KC_TRNS, KC_NO, KC_NO, KC_NO, KC_0, KC_NO
                   //`--------------------------'  `----------------------'
@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //left hand
   [4] = LAYOUT_split_3x6_3(
   //,--------------------------------------.    ,--------------------------------------------|
-      TO(0), LGUI(KC_A), LGUI(KC_W), KC_BSPC, KC_TAB, KC_NO,     LGUI(KC_UP), LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_BSPC,
+      TO(0), LGUI(KC_A), LGUI(KC_W), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB), KC_NO,     LGUI(KC_UP), LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_BSPC,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
       LGUI(KC_A), KC_LSFT, KC_LGUI, LGUI(KC_C), LALT(LGUI(KC_V)), LGUI(KC_V),     KC_X, KC_LEFT, KC_DOWN, KC_RGHT, LGUI(KC_Z), KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
