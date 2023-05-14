@@ -89,9 +89,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------------------------------------.    ,--------------------------------------------|
       LGUI(KC_PLUS), LSFT(LALT(KC_ENT)), LGUI(KC_LBRC), LALT(LSFT(KC_SPC)), LGUI(KC_RBRC), LGUI(KC_N),     KC_PGUP, KC_7, KC_8, KC_9, KC_NO, LGUI(KC_Q),
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LGUI(KC_MINS), LCTL(KC_1), LCTL(KC_2), LCTL(KC_3), LCTL(KC_4), LAT(LSFT(KC_L)),     KC_PGDN, KC_4, KC_5, KC_6, KC_PIPE, KC_BSLS,
+      LGUI(KC_MINS), LCTL(KC_1), LCTL(KC_2), LCTL(KC_3), LCTL(KC_4), LALT(LSFT(KC_L)),     KC_PGDN, KC_4, KC_5, KC_6, KC_PIPE, KC_BSLS,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LALT(LSFT(KC_T)), LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LAT(LSFT(KC_H)),     KC_NO, KC_1, KC_2, KC_3, TO(0), KC_NO,
+      LALT(LSFT(KC_T)), LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_H)),     KC_NO, KC_1, KC_2, KC_3, TO(0), KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
                         KC_TRNS, KC_NO, KC_NO, KC_NO, KC_0, KC_NO
                   //`--------------------------'  `----------------------'
