@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LGUI,  KC_LALT, KC_W, KC_E,  KC_R,    KC_T,    KC_Y,   KC_U,  KC_I,       KC_O,            KC_NO,    KC_BSPC,
     KC_Q,     KC_A,    KC_S, KC_D,  KC_F,    KC_G,    KC_H,   KC_J,  KC_K,       KC_L,            KC_ENT,   KC_P,
     KC_LCTRL, KC_Z,    KC_X, KC_C,  KC_V,    KC_B,    KC_N,   KC_M,  KC_COMM,    KC_DOT,          KC_SLASH, KC_QUOT,
-                             MO(3), KC_LSFT, MO(1),   KC_SPC, MO(2), KC_RSHIFT
+                             MO(3), KC_LSFT, MO(1), KC_SPC, MO(2), KC_RSHIFT
   ),
   // command layer
   //  offer cmd based combination keys on the left and symbols on the right,
@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // two KC_NO can be used later, left of LGUI(KC_Z) and right of LGUI(KC_SPC)
   [1] = LAYOUT_split_3x6_3(
     LGUI(KC_W),       LGUI(LSFT(LALT(KC_V))),     LGUI(KC_S), LGUI(LSFT(KC_P)), LGUI(KC_R), TD(CMD_T_SFT),        KC_CIRC,      KC_AMPR,    KC_LPRN,              KC_RPRN,        KC_NO,   LGUI(KC_BSPC),
-    LGUI(KC_TAB),     LGUI(KC_A),                 KC_TAB,     LGUI(KC_F),       KC_ESC,     LGUI(KC_K),    KC_ASTR,      LCTL(KC_H), TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCOLON,
+    LALT(LSFT(KC_J)),     LGUI(KC_A),                 KC_TAB,     LGUI(KC_F),       KC_ESC,     LGUI(KC_K),    KC_ASTR,      LCTL(KC_H), TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCOLON,
     LGUI(LSFT(KC_4)), LGUI(KC_Z),                 LGUI(KC_X), LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),           KC_BSPC,      KC_LBRC,    KC_RBRC,              KC_LCBR,        KC_RCBR, LGUI(KC_L),
                                             KC_NO,            KC_NO,      KC_NO,                LGUI(KC_SPC), KC_NO,      KC_NO
   ),
@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_split_3x6_3(
      LCTL(LGUI(KC_Q)),        KC_NO,      KC_2,  KC_3,    KC_4,    KC_5,     LGUI(KC_GRV),    LGUI(KC_U),    KC_UP,      LGUI(KC_O),    TO(4),      LGUI(KC_W),
      KC_1,         KC_EXLM,    KC_AT, KC_HASH, KC_DLR,  KC_PERC,  KC_HOME,         KC_LEFT,       KC_DOWN,    KC_RGHT,       LGUI(KC_Y), LGUI(LSFT(KC_4)),
-     LCTL(KC_SPC), LGUI(KC_1), KC_NO, KC_NO,   KC_TILD, KC_GRV,   LALT(KC_BSPACE), LALT(KC_LEFT), LGUI(KC_I), LALT(KC_RGHT), KC_END,     KC_NO,
+     LCTL(KC_SPC), LGUI(KC_1), KC_NO, KC_NO,   KC_TILD, KC_GRV,   LALT(KC_BSPACE), LALT(KC_LEFT), LGUI(KC_I), LALT(KC_RGHT), KC_END,     LGUI(KC_DOWN),
                                       KC_NO,   KC_NO,   KC_NO,    KC_NO,           KC_TRNS,       KC_NO
   ),
   // nums
@@ -87,11 +87,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
   //,--------------------------------------.    ,--------------------------------------------|
-      LGUI(KC_PLUS), KC_NO, LGUI(KC_LBRC), LALT(LSFT(KC_J)), LGUI(KC_RBRC), LALT(LSFT(KC_SPC)),     KC_PGUP, KC_7, KC_8, KC_9, KC_NO, LGUI(KC_Q),
+      LGUI(KC_PLUS), LSFT(LALT(KC_ENT)), LGUI(KC_LBRC), LALT(LSFT(KC_SPC)), LGUI(KC_RBRC), LGUI(KC_N),     KC_PGUP, KC_7, KC_8, KC_9, KC_NO, LGUI(KC_Q),
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LGUI(KC_MINS), LCTL(KC_1), LCTL(KC_2), LCTL(KC_3), LCTL(KC_4), LCTL(KC_5),     KC_PGDN, KC_4, KC_5, KC_6, KC_PIPE, KC_BSLS,
+      LGUI(KC_MINS), LCTL(KC_1), LCTL(KC_2), LCTL(KC_3), LCTL(KC_4), LAT(LSFT(KC_L)),     KC_PGDN, KC_4, KC_5, KC_6, KC_PIPE, KC_BSLS,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LALT(LSFT(KC_T)), LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LCTL(LSFT(LALT(KC_5))),     KC_NO, KC_1, KC_2, KC_3, TO(0), KC_NO,
+      LALT(LSFT(KC_T)), LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LAT(LSFT(KC_H)),     KC_NO, KC_1, KC_2, KC_3, TO(0), KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
                         KC_TRNS, KC_NO, KC_NO, KC_NO, KC_0, KC_NO
                   //`--------------------------'  `----------------------'
@@ -103,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
       LGUI(KC_A), KC_LSFT, KC_LGUI, LGUI(KC_C), LALT(LGUI(KC_V)), LGUI(KC_V),     KC_X, KC_LEFT, KC_DOWN, KC_RGHT, LGUI(KC_Z), KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      KC_NO, LGUI(KC_Z), KC_X, KC_HASH, KC_ENT, LGUI(KC_BSPC),       LGUI(KC_DOWN), LGUI(KC_C), LALT(LGUI(KC_V)), LGUI(KC_BSPC), KC_NO, KC_NO,
+      KC_NO, LGUI(KC_Z), KC_X, KC_HASH, KC_ENT, LGUI(KC_BSPC),       LGUI(KC_DOWN), LGUI(KC_C), LALT(LGUI(KC_V)), LGUI(KC_BSPC), KC_NO, LGUI(KC_DOWN),
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
                           KC_NO, KC_NO, KC_SPC, KC_SPC, KC_NO, KC_NO
                   //`--------------------------'  `----------------------'
