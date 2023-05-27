@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // two KC_NO can be used later, left of LGUI(KC_Z) and right of LGUI(KC_SPC)
   [1] = LAYOUT_split_3x6_3(
     LGUI(KC_W),       LGUI(LSFT(LALT(KC_V))),     LGUI(KC_S), LGUI(LSFT(KC_P)), LGUI(KC_R), TD(CMD_T_SFT),        KC_CIRC,      KC_AMPR,    KC_LPRN,              KC_RPRN,        KC_NO,   LGUI(KC_BSPC),
-    LALT(LSFT(KC_J)),     LGUI(KC_A),                 KC_TAB,     LGUI(KC_F),       KC_ESC,     LGUI(KC_K),    KC_ASTR,      LCTL(KC_H), TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCOLON,
+    LGUI(KC_TAB),     LGUI(KC_A),                 KC_TAB,     LGUI(KC_F),       KC_ESC,     LGUI(KC_K),    KC_ASTR,      LCTL(KC_H), TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCOLON,
     LGUI(LSFT(KC_4)), LGUI(KC_Z),                 LGUI(KC_X), LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),           KC_BSPC,      KC_LBRC,    KC_RBRC,              KC_LCBR,        KC_RCBR, LGUI(KC_L),
                                             KC_NO,            KC_NO,      KC_NO,                LGUI(KC_SPC), KC_NO,      KC_NO
   ),
@@ -87,16 +87,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
   //,--------------------------------------.    ,--------------------------------------------|
-      LGUI(KC_PLUS), LALT(LSFT(KC_T)), LGUI(KC_LBRC), LALT(LSFT(KC_SPC)), LGUI(KC_RBRC), LALT(LSFT(KC_L)), KC_PGUP, KC_7, KC_8, KC_9, KC_NO, LGUI(KC_Q),
+      KC_NO, LALT(LSFT(KC_T)), LGUI(KC_LBRC), LALT(LSFT(KC_SPC)), LGUI(KC_RBRC), LALT(LSFT(KC_L)), KC_PGUP, KC_7, KC_8, KC_9, KC_NO, LGUI(KC_Q),
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LGUI(KC_MINS), LCTL(KC_1), LCTL(KC_2), LCTL(KC_3), LCTL(KC_4), LALT(LSFT(KC_H)),     KC_PGDN, KC_4, KC_5, KC_6, KC_PIPE, KC_BSLS,
+      LALT(LSFT(KC_J)), LCTL(KC_1), LCTL(KC_2), LCTL(KC_3), LCTL(KC_4), LALT(LSFT(KC_H)),     KC_PGDN, KC_4, KC_5, KC_6, KC_PIPE, KC_BSLS,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LSFT(LALT(KC_ENT)), LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LGUI(KC_N),     KC_NO, KC_1, KC_2, KC_3, TO(0), KC_NO,
+      LSFT(LALT(KC_ENT)), LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LGUI(KC_N),     KC_NO, KC_1, KC_2, KC_3, LGUI(KC_MINUS), LGUI(KC_PLUS),
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
                         KC_TRNS, KC_NO, KC_NO, KC_NO, KC_0, KC_NO
                   //`--------------------------'  `----------------------'
   ),
-  //left hand
+  //one hand
   [4] = LAYOUT_split_3x6_3(
   //,--------------------------------------.    ,--------------------------------------------|
       TO(0), LGUI(KC_A), LGUI(KC_W), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB), KC_NO,     LGUI(KC_UP), LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_BSPC,
