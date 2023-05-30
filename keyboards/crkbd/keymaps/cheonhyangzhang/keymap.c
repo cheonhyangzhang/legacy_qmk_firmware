@@ -3,8 +3,7 @@
 #include <stdio.h>
 // tap dance section start
 enum tap_dance_codes {
-  CMD_T_SFT,
-  CMD_V_SHIFT,
+  FINDER_KEYS,
   MINUS_UNDERSCORE,
   EQUAL_PLUS,
   A_CTL,
@@ -31,10 +30,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // MO(2) provides navigation layer
   // KC_RSHIFT is not often used
   [0] = LAYOUT_split_3x6_3(
-    KC_LGUI,  KC_LALT, KC_W, KC_E,  KC_R,    KC_T,    KC_Y,   KC_U,  KC_I,       KC_O,            KC_NO,    KC_BSPC,
+    KC_LGUI,  KC_LALT, KC_W, KC_E,  KC_R,    KC_T,    KC_Y,   KC_U,  KC_I,       KC_O,            MO(5),    KC_BSPC,
     KC_Q,     KC_A,    KC_S, KC_D,  KC_F,    KC_G,    KC_H,   KC_J,  KC_K,       KC_L,            KC_ENT,   KC_P,
     KC_LCTRL, KC_Z,    KC_X, KC_C,  KC_V,    KC_B,    KC_N,   KC_M,  KC_COMM,    KC_DOT,          KC_SLASH, KC_QUOT,
-                             MO(3), KC_LSFT, MO(1), KC_SPC, MO(2), KC_RSHIFT
+                             MO(3), KC_LSFT, MO(1),   KC_SPC, MO(2), MO(5)
   ),
   // command layer
   //  offer cmd based combination keys on the left and symbols on the right,
@@ -42,7 +41,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // top left LGUI(KC_W) is used when primarily using mouse on right hand, provide easy way to cmd w to close tab.
   // LGUI(KC_S) provides cmd s, original cmd s is taken by tab, tab is more often used and needs a better place
   // LGUI(LSFT(KC_P)) is used to trigger 1Password
-  // TD(CMD_T_SFT) is to provide one tap to open a new tab, two tab perform shift cmd t, opens last closed tab
   // LGUI(KC_BSPACE) is for delete file
   // LGUI(KC_TAB) is used for switch app in mac
   // KC_TAB is working good, once get used to it, this becomes a natrual location for tab, and easy to press.
@@ -54,10 +52,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // LGUI(KC_SPC) is for mac spotlight search
   // two KC_NO can be used later, left of LGUI(KC_Z) and right of LGUI(KC_SPC)
   [1] = LAYOUT_split_3x6_3(
-    LGUI(KC_W),       LGUI(LSFT(LALT(KC_V))),     LGUI(KC_S), LGUI(LSFT(KC_P)), LGUI(KC_R), TD(CMD_T_SFT),        KC_CIRC,      KC_AMPR,    KC_LPRN,              KC_RPRN,        KC_NO,   LGUI(KC_BSPC),
-    LGUI(KC_TAB),     LGUI(KC_A),                 KC_TAB,     LGUI(KC_F),       KC_ESC,     LGUI(KC_K),    KC_ASTR,      LCTL(KC_H), TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCOLON,
-    LGUI(LSFT(KC_4)), LGUI(KC_Z),                 LGUI(KC_X), LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),           KC_BSPC,      KC_LBRC,    KC_RBRC,              KC_LCBR,        KC_RCBR, LGUI(KC_L),
-                                            KC_NO,            KC_NO,      KC_NO,                LGUI(KC_SPC), KC_NO,      KC_NO
+    LGUI(KC_W),       KC_RSHIFT,    LGUI(KC_S), LGUI(LSFT(KC_P)), LGUI(KC_R), LGUI(KC_T),   KC_CIRC,      KC_AMPR,              KC_LPRN,              KC_RPRN,        LALT(LGUI(KC_V)),   LGUI(KC_BSPC),
+    LGUI(KC_TAB),     LGUI(KC_A),   KC_TAB,     LGUI(KC_F),       KC_ESC,     LGUI(KC_K),   KC_ASTR,      LCTL(KC_H),           TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN,            KC_SCOLON,
+    LSFT(KC_TAB),     LGUI(KC_Z),   LGUI(KC_X), LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),   KC_BSPC,      KC_LBRC,              KC_RBRC,              KC_LCBR,        KC_RCBR,            KC_PIPE,
+                                                KC_NO,            KC_NO,      KC_NO,        LGUI(KC_SPC), TD(FINDER_KEYS),      KC_NO
   ),
   // navigation layer
   //   provides numbers, symbols on the left and navigation and other commands on the right
@@ -77,26 +75,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // LGUI(KC_I) open workspace switcher in mac
   // KC_END go to the end of text
   [2] = LAYOUT_split_3x6_3(
-     LCTL(LGUI(KC_Q)),        KC_NO,      KC_2,  KC_3,    KC_4,    KC_5,     LGUI(KC_GRV),    LGUI(KC_U),    KC_UP,      LGUI(KC_O),    TO(4),      LGUI(KC_W),
-     KC_1,         KC_EXLM,    KC_AT, KC_HASH, KC_DLR,  KC_PERC,  KC_HOME,         KC_LEFT,       KC_DOWN,    KC_RGHT,       LGUI(KC_Y), LGUI(LSFT(KC_4)),
-     LCTL(KC_SPC), LGUI(KC_1), KC_NO, KC_NO,   KC_TILD, KC_GRV,   LALT(KC_BSPACE), LALT(KC_LEFT), LGUI(KC_I), LALT(KC_RGHT), KC_END,     LGUI(KC_DOWN),
-                                      KC_NO,   KC_NO,   KC_NO,    KC_NO,           KC_TRNS,       KC_NO
+     LCTL(LGUI(KC_Q)),  KC_NO,      KC_2,               KC_3,           KC_4,    KC_5,     LGUI(KC_GRV),    LGUI(KC_U),     KC_UP,     LGUI(KC_O),    TO(4),      LGUI(KC_W),
+     KC_1,              KC_EXLM,    KC_AT,              KC_HASH,        KC_DLR,  KC_PERC,  KC_HOME,         KC_LEFT,        KC_DOWN,   KC_RGHT,       LGUI(KC_Y), KC_END,
+     KC_NO,             LGUI(KC_1), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD, KC_GRV,   LALT(KC_BSPACE), LALT(KC_LEFT),  KC_NO,     LALT(KC_RGHT), KC_NO,      LGUI(KC_DOWN),
+                                                        KC_NO,          KC_NO,   KC_NO,    KC_NO,           KC_NO,          KC_NO
   ),
   // nums
   [3] = LAYOUT_split_3x6_3(
 
-
   //,--------------------------------------.    ,--------------------------------------------|
-      KC_NO, LALT(LSFT(KC_T)), LGUI(KC_LBRC), LALT(LSFT(KC_SPC)), LGUI(KC_RBRC), LALT(LSFT(KC_L)), KC_PGUP, KC_7, KC_8, KC_9, KC_NO, LGUI(KC_Q),
+      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_PGUP,  KC_7, KC_8, KC_9, KC_NO, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LALT(LSFT(KC_J)), LCTL(KC_1), LCTL(KC_2), LCTL(KC_3), LCTL(KC_4), LALT(LSFT(KC_H)),     KC_PGDN, KC_4, KC_5, KC_6, KC_PIPE, KC_BSLS,
+      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_PGDN,  KC_4, KC_5, KC_6, KC_NO, KC_BSLS,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LSFT(LALT(KC_ENT)), LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LGUI(KC_N),     KC_NO, KC_1, KC_2, KC_3, LGUI(KC_MINUS), LGUI(KC_PLUS),
+      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,    KC_1, KC_2, KC_3, LGUI(KC_MINUS), LGUI(KC_PLUS),
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-                        KC_TRNS, KC_NO, KC_NO, KC_NO, KC_0, KC_NO
+                           KC_NO, KC_NO, KC_NO, KC_DOT,   KC_0, KC_NO
                   //`--------------------------'  `----------------------'
   ),
   //one hand
+  //this layer is not up to date
   [4] = LAYOUT_split_3x6_3(
   //,--------------------------------------.    ,--------------------------------------------|
       TO(0), LGUI(KC_A), LGUI(KC_W), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB), KC_NO,     LGUI(KC_UP), LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_BSPC,
@@ -108,15 +106,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_NO, KC_NO, KC_SPC, KC_SPC, KC_NO, KC_NO
                   //`--------------------------'  `----------------------'
   ),
+  //window layer
   [5] = LAYOUT_split_3x6_3(
   //,--------------------------------------.    ,--------------------------------------------|
-      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,       KC_WH_D, KC_BTN1, KC_MS_U, KC_BTN2, KC_NO, KC_NO,
+      KC_NO,              LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       LALT(LSFT(KC_J)),       LALT(LSFT(KC_K)),       KC_NO,              KC_NO,      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,       KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, KC_NO, KC_NO,
+      LALT(LSFT(KC_ENT)), LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_T)),   KC_NO,      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,       KC_NO, KC_NO, KC_NO, KC_NO, TO(0), KC_NO,
+      LSFT(LALT(KC_M)),   LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_SPC)), KC_NO,      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-                          KC_NO, KC_NO, KC_NO, KC_NO, KC_ACL0, KC_NO
+                                                                          KC_NO,                  LGUI(KC_W),             LGUI(KC_N),         LGUI(KC_I), KC_NO, KC_NO
                   //`--------------------------'  `----------------------'
   )
 };
@@ -188,108 +187,7 @@ void dance_1_reset(qk_tap_dance_state_t *state, void *user_data) {
     }
     dance_state[1].step = 0;
 }
-void on_dance_2(qk_tap_dance_state_t *state, void *user_data);
-void dance_2_finished(qk_tap_dance_state_t *state, void *user_data);
-void dance_2_reset(qk_tap_dance_state_t *state, void *user_data);
 
-void on_dance_2(qk_tap_dance_state_t *state, void *user_data) {
-    if(state->count == 3) {
-        tap_code16(KC_O);
-        tap_code16(KC_O);
-        tap_code16(KC_O);
-    }
-    if(state->count > 3) {
-        tap_code16(KC_O);
-    }
-}
-
-void dance_2_finished(qk_tap_dance_state_t *state, void *user_data) {
-    dance_state[2].step = dance_step(state);
-    switch (dance_state[2].step) {
-        case SINGLE_TAP: register_code16(KC_O); break;
-        case SINGLE_HOLD: register_code16(LSFT(KC_QUOTE)); break;
-        case DOUBLE_TAP: register_code16(KC_O); register_code16(KC_O); break;
-        case DOUBLE_SINGLE_TAP: tap_code16(KC_O); register_code16(KC_O);
-    }
-}
-
-void dance_2_reset(qk_tap_dance_state_t *state, void *user_data) {
-    wait_ms(10);
-    switch (dance_state[2].step) {
-        case SINGLE_TAP: unregister_code16(KC_O); break;
-        case SINGLE_HOLD: unregister_code16(LSFT(KC_QUOTE)); break;
-        case DOUBLE_TAP: unregister_code16(KC_O); break;
-        case DOUBLE_SINGLE_TAP: unregister_code16(KC_O); break;
-    }
-    dance_state[2].step = 0;
-}
-
-void on_dance_4(qk_tap_dance_state_t *state, void *user_data);
-void dance_4_finished(qk_tap_dance_state_t *state, void *user_data);
-void dance_4_reset(qk_tap_dance_state_t *state, void *user_data);
-
-void on_dance_4(qk_tap_dance_state_t *state, void *user_data) {
-    if(state->count == 3) {
-        tap_code16(LGUI(KC_T));
-        tap_code16(LGUI(KC_T));
-        tap_code16(LGUI(KC_T));
-    }
-    if(state->count > 3) {
-        tap_code16(LGUI(KC_T));
-    }
-}
-
-void dance_4_finished(qk_tap_dance_state_t *state, void *user_data) {
-    dance_state[4].step = dance_step(state);
-    switch (dance_state[4].step) {
-        case SINGLE_TAP: register_code16(LGUI(KC_T)); break;
-        case DOUBLE_TAP: register_code16(LGUI(LSFT(KC_T))); break;
-        case DOUBLE_SINGLE_TAP: tap_code16(LGUI(KC_T)); register_code16(LGUI(KC_T));
-    }
-}
-
-void dance_4_reset(qk_tap_dance_state_t *state, void *user_data) {
-    wait_ms(10);
-    switch (dance_state[4].step) {
-        case SINGLE_TAP: unregister_code16(LGUI(KC_T)); break;
-        case DOUBLE_TAP: unregister_code16(LGUI(LSFT(KC_T))); break;
-        case DOUBLE_SINGLE_TAP: unregister_code16(LGUI(KC_T)); break;
-    }
-    dance_state[4].step = 0;
-}
-void on_dance_5(qk_tap_dance_state_t *state, void *user_data);
-void dance_5_finished(qk_tap_dance_state_t *state, void *user_data);
-void dance_5_reset(qk_tap_dance_state_t *state, void *user_data);
-
-void on_dance_5(qk_tap_dance_state_t *state, void *user_data) {
-    if(state->count == 3) {
-        tap_code16(LGUI(KC_V));
-        tap_code16(LGUI(KC_V));
-        tap_code16(LGUI(KC_V));
-    }
-    if(state->count > 3) {
-        tap_code16(LGUI(KC_V));
-    }
-}
-
-void dance_5_finished(qk_tap_dance_state_t *state, void *user_data) {
-    dance_state[5].step = dance_step(state);
-    switch (dance_state[5].step) {
-        case SINGLE_TAP: register_code16(LGUI(KC_V)); break;
-        case DOUBLE_TAP: register_code16(LGUI(LSFT(KC_V))); break;
-        case DOUBLE_SINGLE_TAP: tap_code16(LGUI(KC_V)); register_code16(LGUI(KC_V));
-    }
-}
-
-void dance_5_reset(qk_tap_dance_state_t *state, void *user_data) {
-    wait_ms(10);
-    switch (dance_state[5].step) {
-        case SINGLE_TAP: unregister_code16(LGUI(KC_V)); break;
-        case DOUBLE_TAP: unregister_code16(LGUI(LSFT(KC_V))); break;
-        case DOUBLE_SINGLE_TAP: unregister_code16(LGUI(KC_V)); break;
-    }
-    dance_state[5].step = 0;
-}
 void on_dance_6(qk_tap_dance_state_t *state, void *user_data);
 void dance_6_finished(qk_tap_dance_state_t *state, void *user_data);
 void dance_6_reset(qk_tap_dance_state_t *state, void *user_data);
@@ -397,46 +295,8 @@ void dance_8_reset(qk_tap_dance_state_t *state, void *user_data) {
     dance_state[1].step = 0;
 }
 
-void on_dance_10(qk_tap_dance_state_t *state, void *user_data);
-void dance_10_finished(qk_tap_dance_state_t *state, void *user_data);
-void dance_10_reset(qk_tap_dance_state_t *state, void *user_data);
-
-void on_dance_10(qk_tap_dance_state_t *state, void *user_data) {
-    if(state->count == 3) {
-        tap_code16(LGUI(KC_K));
-        tap_code16(LGUI(KC_K));
-        tap_code16(LGUI(KC_K));
-    }
-    if(state->count > 3) {
-        tap_code16(LGUI(KC_K));
-    }
-}
-
-void dance_10_finished(qk_tap_dance_state_t *state, void *user_data) {
-    dance_state[1].step = dance_step(state);
-    switch (dance_state[1].step) {
-        case SINGLE_TAP: register_code16(LGUI(KC_K)); break;
-        case SINGLE_HOLD: register_code16(LGUI(KC_K)); break;
-        case DOUBLE_TAP: register_code16(LGUI(KC_L)); break;
-        case DOUBLE_SINGLE_TAP: tap_code16(LGUI(KC_K)); register_code16(LGUI(KC_K));
-    }
-}
-
-void dance_10_reset(qk_tap_dance_state_t *state, void *user_data) {
-    wait_ms(10);
-    switch (dance_state[1].step) {
-        case SINGLE_TAP: unregister_code16(LGUI(KC_K)); break;
-        case SINGLE_HOLD: unregister_code16(LGUI(KC_K)); break;
-        case DOUBLE_TAP: unregister_code16(LGUI(KC_L)); break;
-        case DOUBLE_SINGLE_TAP: unregister_code16(LGUI(KC_K)); break;
-    }
-    dance_state[1].step = 0;
-}
-
-
 qk_tap_dance_action_t tap_dance_actions[] = {
-        [CMD_T_SFT] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_4, dance_4_finished, dance_4_reset),
-        [CMD_V_SHIFT] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_5, dance_5_finished, dance_5_reset),
+        [FINDER_KEYS] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_1, dance_1_finished, dance_1_reset),
         [MINUS_UNDERSCORE] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_6, dance_6_finished, dance_6_reset),
         [EQUAL_PLUS] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_7, dance_7_finished, dance_7_reset),
         [A_CTL] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_8, dance_8_finished, dance_8_reset),
