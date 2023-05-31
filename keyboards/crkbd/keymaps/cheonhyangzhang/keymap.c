@@ -52,10 +52,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // LGUI(KC_SPC) is for mac spotlight search
   // two KC_NO can be used later, left of LGUI(KC_Z) and right of LGUI(KC_SPC)
   [1] = LAYOUT_split_3x6_3(
-    LGUI(KC_W),       KC_RSHIFT,    LGUI(KC_S), LGUI(LSFT(KC_P)), LGUI(KC_R), LGUI(KC_T),   KC_CIRC,      KC_AMPR,              KC_LPRN,              KC_RPRN,        LALT(LGUI(KC_V)),   LGUI(KC_BSPC),
-    LGUI(KC_TAB),     LGUI(KC_A),   KC_TAB,     LGUI(KC_F),       KC_ESC,     LGUI(KC_K),   KC_ASTR,      LCTL(KC_H),           TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN,            KC_SCOLON,
-    LSFT(KC_TAB),     LGUI(KC_Z),   LGUI(KC_X), LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),   KC_BSPC,      KC_LBRC,              KC_RBRC,              KC_LCBR,        KC_RCBR,            KC_PIPE,
-                                                KC_NO,            KC_NO,      KC_NO,        LGUI(KC_SPC), TD(FINDER_KEYS),      KC_NO
+    LGUI(KC_W),       LALT(LSFT(LGUI(KC_V))),   LGUI(KC_S),   LGUI(LSFT(KC_P)), LGUI(KC_R), LGUI(KC_T),   KC_CIRC,      KC_AMPR,              KC_LPRN,              KC_RPRN,        LALT(LGUI(KC_V)),   LGUI(KC_BSPC),
+    LGUI(KC_TAB),     LGUI(KC_A),               KC_TAB,       LGUI(KC_F),       KC_ESC,     LGUI(KC_K),   KC_ASTR,      LCTL(KC_H),           TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN,            KC_SCOLON,
+    LSFT(KC_TAB),     LGUI(KC_Z),               LGUI(KC_X),   LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),   KC_BSPC,      KC_LBRC,              KC_RBRC,              KC_LCBR,        KC_RCBR,            KC_PIPE,
+                                                              KC_NO,            KC_NO,      KC_NO,        LGUI(KC_SPC), TD(FINDER_KEYS),      KC_NO
   ),
   // navigation layer
   //   provides numbers, symbols on the left and navigation and other commands on the right
@@ -77,20 +77,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_split_3x6_3(
      LCTL(LGUI(KC_Q)),  KC_NO,      KC_2,               KC_3,           KC_4,    KC_5,     LGUI(KC_GRV),    LGUI(KC_U),     KC_UP,     LGUI(KC_O),    TO(4),      LGUI(KC_W),
      KC_1,              KC_EXLM,    KC_AT,              KC_HASH,        KC_DLR,  KC_PERC,  KC_HOME,         KC_LEFT,        KC_DOWN,   KC_RGHT,       LGUI(KC_Y), KC_END,
-     KC_NO,             LGUI(KC_1), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD, KC_GRV,   LALT(KC_BSPACE), LALT(KC_LEFT),  KC_NO,     LALT(KC_RGHT), KC_NO,      LGUI(KC_DOWN),
+     KC_NO,             LGUI(KC_1), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD, KC_GRV,              LALT(KC_BSPACE), LALT(KC_LEFT),  MO(5),     LALT(KC_RGHT), KC_NO,      LGUI(KC_DOWN),
                                                         KC_NO,          KC_NO,   KC_NO,    KC_NO,           KC_NO,          KC_NO
   ),
   // nums
   [3] = LAYOUT_split_3x6_3(
 
   //,--------------------------------------.    ,--------------------------------------------|
-      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_PGUP,  KC_7, KC_8, KC_9, KC_NO, KC_NO,
+      LGUI(LSFT(KC_W)),  KC_NO, KC_NO, KC_NO, KC_NO,            KC_NO,  KC_PGUP,  KC_7, KC_8, KC_9, KC_NO, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_PGDN,  KC_4, KC_5, KC_6, KC_NO, KC_BSLS,
+      KC_NO,          KC_NO, KC_NO, KC_NO, LGUI(LSFT(KC_4)), KC_NO,  KC_PGDN,  KC_4, KC_5, KC_6, KC_NO, KC_BSLS,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,    KC_1, KC_2, KC_3, LGUI(KC_MINUS), LGUI(KC_PLUS),
+      KC_NO,          KC_NO, KC_NO, KC_NO, KC_NO,            KC_NO,  KC_NO,    KC_1, KC_2, KC_3, LGUI(KC_MINUS), LGUI(KC_PLUS),
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-                           KC_NO, KC_NO, KC_NO, KC_DOT,   KC_0, KC_NO
+                           KC_NO, KC_NO,            KC_NO,  KC_DOT,   KC_0, KC_NO
                   //`--------------------------'  `----------------------'
   ),
   //one hand
