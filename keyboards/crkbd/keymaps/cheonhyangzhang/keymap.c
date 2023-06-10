@@ -75,10 +75,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // LGUI(KC_I) open workspace switcher in mac
   // KC_END go to the end of text
   [2] = LAYOUT_split_3x6_3(
-     LCTL(LGUI(KC_Q)),  KC_NO,      KC_2,               KC_3,           KC_4,    KC_5,      LGUI(KC_GRV),    LGUI(KC_U),     KC_UP,               LGUI(KC_O),    TO(4),      LGUI(KC_W),
-     KC_1,              KC_EXLM,    KC_AT,              KC_HASH,        KC_DLR,  KC_PERC,   KC_HOME,         KC_LEFT,        KC_DOWN,             KC_RGHT,       LGUI(KC_Y), KC_END,
-     KC_NO,             LGUI(KC_1), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD, KC_GRV,    LALT(KC_BSPACE), LALT(KC_LEFT),  TD(FINDER_KEYS),     LALT(KC_RGHT), KC_NO,      LGUI(KC_DOWN),
-                                                        KC_NO,          KC_NO,   MO(5),     KC_NO,           KC_NO,          KC_NO
+     LCTL(LGUI(KC_Q)),  KC_NO,              KC_2,           KC_3,           KC_4,     KC_5,     LGUI(KC_GRV),    LGUI(KC_U),     KC_UP,               LGUI(KC_O),    TO(4),      LGUI(KC_W),
+     KC_1,              KC_EXLM,            KC_AT,          KC_HASH,        KC_DLR,   KC_PERC,  KC_HOME,         KC_LEFT,        KC_DOWN,             KC_RGHT,       LGUI(KC_Y), KC_END,
+     LGUI(KC_1),        LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_NO,          KC_TILD,  KC_GRV,   LALT(KC_BSPACE), LALT(KC_LEFT),  TD(FINDER_KEYS),     LALT(KC_RGHT), KC_NO,      LGUI(KC_DOWN),
+                                                            KC_NO,          KC_NO,    MO(5),    KC_NO,           KC_NO,          KC_NO
   ),
   // nums
   [3] = LAYOUT_split_3x6_3(
