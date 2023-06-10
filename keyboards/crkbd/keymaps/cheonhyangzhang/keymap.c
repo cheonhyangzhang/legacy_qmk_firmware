@@ -52,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // LGUI(KC_SPC) is for mac spotlight search
   // two KC_NO can be used later, left of LGUI(KC_Z) and right of LGUI(KC_SPC)
   [1] = LAYOUT_split_3x6_3(
-    LGUI(KC_W),       LALT(LSFT(LGUI(KC_V))),   LGUI(KC_S),   LGUI(LSFT(KC_P)), LGUI(KC_R), LGUI(KC_T),   KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        LALT(LGUI(KC_V)),   LGUI(KC_BSPC),
-    LGUI(KC_TAB),     LGUI(KC_A),               KC_TAB,       LGUI(KC_F),       KC_ESC,     LGUI(KC_K),   KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN,            KC_SCOLON,
-    LSFT(KC_TAB),     LGUI(KC_Z),               LGUI(KC_X),   LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),   KC_BSPC,      KC_LBRC,      KC_RBRC,              KC_LCBR,        KC_RCBR,            KC_PIPE,
+    LGUI(KC_W),       LALT(LSFT(LGUI(KC_V))),   LGUI(KC_S),   LGUI(LSFT(KC_P)), LGUI(KC_R), LGUI(KC_T),   KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        KC_NO,   LGUI(KC_BSPC),
+    LGUI(KC_TAB),     LGUI(KC_A),               KC_TAB,       LGUI(KC_F),       KC_ESC,     LGUI(KC_K),   KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCOLON,
+    LSFT(KC_TAB),     LGUI(KC_Z),               LGUI(KC_X),   LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),   KC_BSPC,      KC_LBRC,      KC_RBRC,              KC_LCBR,        KC_RCBR, KC_PIPE,
                                                               KC_NO,            KC_NO,      KC_NO,        LGUI(KC_SPC), MO(5),        KC_NO
   ),
   // navigation layer
@@ -75,9 +75,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // LGUI(KC_I) open workspace switcher in mac
   // KC_END go to the end of text
   [2] = LAYOUT_split_3x6_3(
-     LCTL(LGUI(KC_Q)),  KC_NO,              KC_2,           KC_3,           KC_4,     KC_5,     LGUI(KC_GRV),    LGUI(KC_U),     KC_UP,               LGUI(KC_O),    TO(4),      LGUI(KC_W),
-     KC_1,              KC_EXLM,            KC_AT,          KC_HASH,        KC_DLR,   KC_PERC,  KC_HOME,         KC_LEFT,        KC_DOWN,             KC_RGHT,       LGUI(KC_Y), KC_END,
-     LGUI(KC_1),        LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_NO,          KC_TILD,  KC_GRV,   LALT(KC_BSPACE), LALT(KC_LEFT),  TD(FINDER_KEYS),     LALT(KC_RGHT), KC_NO,      LGUI(KC_DOWN),
+     LCTL(LGUI(KC_Q)),  KC_NO,              KC_2,           KC_3,           KC_4,     KC_5,     LGUI(KC_GRV),    LGUI(KC_U),     KC_UP,               LGUI(KC_O),    TO(4),             LGUI(KC_W),
+     KC_1,              KC_EXLM,            KC_AT,          KC_HASH,        KC_DLR,   KC_PERC,  KC_HOME,         KC_LEFT,        KC_DOWN,             KC_RGHT,       LGUI(KC_Y),        KC_END,
+     LGUI(KC_1),        LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_NO,          KC_TILD,  KC_GRV,   LALT(KC_BSPACE), LALT(KC_LEFT),  TD(FINDER_KEYS),     LALT(KC_RGHT), LALT(LGUI(KC_V)),  LGUI(KC_DOWN),
                                                             KC_NO,          KC_NO,    MO(5),    KC_NO,           KC_NO,          KC_NO
   ),
   // nums
