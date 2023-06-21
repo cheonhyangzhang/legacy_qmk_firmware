@@ -99,13 +99,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //window layer
   [5] = LAYOUT_split_3x6_3(
   //,--------------------------------------.    ,--------------------------------------------|
-      KC_NO,              LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       LALT(LSFT(KC_J)),       LALT(LSFT(KC_K)),       LGUI(KC_I),         LGUI(KC_W),   KC_NO,      KC_NO, KC_NO, KC_NO, KC_NO,
+      KC_NO,              KC_NO,                  KC_NO,                  LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       LALT(LSFT(KC_Z)),     KC_NO,        KC_NO,            KC_NO,        KC_NO,            KC_NO, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LALT(LSFT(KC_ENT)), LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)), KC_NO,        LGUI(KC_N), KC_NO, KC_NO, KC_NO, KC_NO,
+      LALT(LSFT(KC_ENT)), LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)),   LGUI(KC_Q),   LALT(LSFT(KC_J)), LGUI(KC_N),   LALT(LSFT(KC_K)), KC_NO, LGUI(KC_W),
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LSFT(LALT(KC_M)),   LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_T)),   KC_NO,        KC_NO,      KC_NO, KC_NO, KC_NO, KC_NO,
+      LSFT(LALT(KC_M)),   LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_T)),     KC_NO,        LGUI(KC_U),       LGUI(KC_I),   LGUI(KC_O),       KC_NO, KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-                                                                          KC_NO,                  KC_NO,                  KC_NO,              KC_NO,        KC_NO,      KC_NO
+                                                                          KC_NO,                  KC_NO,                  KC_NO,                KC_NO,        KC_NO,            KC_NO
                   //`--------------------------'  `----------------------'
   )
 };
