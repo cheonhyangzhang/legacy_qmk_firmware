@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LGUI(KC_W),       LALT(LSFT(LGUI(KC_V))),   LGUI(KC_S),   LGUI(LSFT(KC_P)), LGUI(KC_R), LGUI(KC_T),   KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        KC_NO,   LGUI(KC_BSPC),
     LGUI(KC_TAB),     LGUI(KC_A),               KC_TAB,       LGUI(KC_F),       KC_ESC,     LGUI(KC_K),   KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCOLON,
     LSFT(KC_TAB),     LGUI(KC_Z),               LGUI(KC_X),   LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),   KC_BSPC,      KC_LBRC,      KC_RBRC,              KC_LCBR,        KC_RCBR, KC_PIPE,
-                                                              KC_NO,            KC_NO,      KC_NO,        LGUI(KC_SPC), MO(5),        KC_NO
+                                                              KC_NO,            KC_NO,      KC_NO,        LGUI(KC_SPC), MO(6),        KC_NO
   ),
   // navigation layer
   //   provides numbers, symbols on the left and navigation and other commands on the right
@@ -75,10 +75,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // LGUI(KC_I) open workspace switcher in mac
   // KC_END go to the end of text
   [2] = LAYOUT_split_3x6_3(
-     LCTL(LGUI(KC_Q)),  KC_NO,              KC_2,               KC_3,           KC_4,     KC_5,     LSFT(LGUI(KC_N)), LGUI(KC_U),     KC_UP,               LGUI(KC_O),    TO(4),             LGUI(KC_W),
+     LCTL(LGUI(KC_Q)),  KC_NO,              KC_2,               KC_3,           KC_4,     KC_5,     LSFT(LGUI(KC_N)), KC_NO,          KC_UP,               KC_NO,         TO(4),             LGUI(KC_W),
      KC_1,              KC_EXLM,            KC_AT,              KC_HASH,        KC_DLR,   KC_PERC,  KC_HOME,          KC_LEFT,        KC_DOWN,             KC_RGHT,       LGUI(KC_Y),        KC_END,
      KC_NO,             LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   LALT(KC_BSPACE),  LALT(KC_LEFT),  TD(FINDER_KEYS),     LALT(KC_RGHT), LALT(LGUI(KC_V)),  LGUI(KC_DOWN),
-                                                                KC_NO,          KC_NO,    MO(5),    KC_NO,            KC_NO,          KC_NO
+                                                                KC_NO,          KC_NO,    MO(6),    KC_NO,            KC_NO,          KC_NO
   ),
   // nums
   [3] = LAYOUT_split_3x6_3(
@@ -99,14 +99,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //window layer
   [5] = LAYOUT_split_3x6_3(
   //,--------------------------------------.    ,--------------------------------------------|
-      KC_NO,              KC_NO,                  KC_NO,                  LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       LALT(LSFT(KC_Z)),     LGUI(KC_GRV), KC_NO,            KC_NO,        KC_NO,            KC_NO,      KC_NO,
+      KC_NO,              KC_NO,                  KC_NO,                  LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       LALT(LSFT(KC_Z)),     LGUI(KC_GRV), LGUI(KC_U),       LGUI(KC_I),   LGUI(KC_O),       KC_NO,      KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LALT(LSFT(KC_ENT)), LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)),   LGUI(KC_Q),   LALT(LSFT(KC_J)), KC_NO,        LALT(LSFT(KC_K)), KC_NO,      LGUI(KC_W),
+      LALT(LSFT(KC_ENT)), LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)),   KC_NO,        LALT(LSFT(KC_J)), KC_NO,        LALT(LSFT(KC_K)), KC_NO,      KC_NO,
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LSFT(LALT(KC_M)),   LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_T)),     KC_NO,        LGUI(KC_U),       LGUI(KC_I),   LGUI(KC_O),       LGUI(KC_H), LGUI(KC_N),
+      LSFT(LALT(KC_M)),   LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_T)),     LGUI(KC_Q),   KC_NO,            KC_NO,        KC_NO,            LGUI(KC_H), LGUI(KC_N),
   //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
                                                                           KC_NO,                  KC_NO,                  KC_NO,                KC_NO,        KC_NO,            KC_NO
                   //`--------------------------'  `----------------------'
+  ),
+  //mouse layer
+  [6] = LAYOUT_split_3x6_3(
+      KC_NO,              KC_NO,                  KC_NO,      KC_NO,          KC_NO,          KC_NO,    KC_NO,    KC_NO,          KC_MS_UP,     KC_NO,          KC_NO,  KC_NO,
+      KC_NO,              KC_NO,                  KC_ESC,     KC_MS_BTN2,     KC_MS_BTN1,     KC_NO,    KC_NO,    KC_MS_LEFT,     KC_MS_DOWN,   KC_MS_RIGHT,    KC_NO,  KC_MS_WH_DOWN,
+      KC_NO,              KC_NO,                  KC_NO,      KC_MS_WH_LEFT,  KC_MS_WH_RIGHT, KC_NO,    KC_NO,    KC_MS_WH_LEFT,  KC_ESC,       KC_MS_WH_RIGHT, KC_NO,  KC_MS_WH_UP,
+                                                              KC_NO,          KC_NO,          KC_NO,    KC_NO,    KC_NO,          KC_NO
   )
 };
 
