@@ -30,10 +30,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // MO(2) provides navigation layer
   // KC_RSHIFT is not often used
   [0] = LAYOUT_split_3x6_3(
-    KC_LGUI,  KC_LALT, KC_W, KC_E,  KC_R,    KC_T,    KC_Y,   KC_U,  KC_I,       KC_O,            MO(5),    KC_BSPC,
+    KC_LGUI,  KC_LALT, KC_W, KC_E,  KC_R,    KC_T,    KC_Y,   KC_U,  KC_I,       KC_O,            KC_NO,    KC_BSPC,
     KC_Q,     KC_A,    KC_S, KC_D,  KC_F,    KC_G,    KC_H,   KC_J,  KC_K,       KC_L,            KC_ENT,   KC_P,
     KC_LCTRL, KC_Z,    KC_X, KC_C,  KC_V,    KC_B,    KC_N,   KC_M,  KC_COMM,    KC_DOT,          KC_SLASH, KC_QUOT,
-                             MO(3), KC_LSFT, MO(1),   KC_SPC, MO(2), MO(5)
+                             MO(4), KC_LSFT, MO(2),   KC_SPC, MO(3), KC_NO
+  ),
+ //mouse layer
+  [1] = LAYOUT_split_3x6_3(
+      KC_TRNS,    KC_TRNS,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,          KC_TRNS,          KC_MS_UP,     KC_TRNS,        KC_NO,      KC_TRNS,
+      KC_NO,      KC_NO,    KC_NO,  KC_NO,    KC_SPC,   KC_NO,    KC_MS_WH_DOWN,  KC_MS_LEFT,       KC_MS_DOWN,   KC_MS_RIGHT,    KC_TRNS,    TO(0),
+      KC_TRNS,    KC_NO,    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_MS_WH_UP,    KC_MS_WH_RIGHT,   KC_NO,        KC_MS_WH_LEFT,  KC_MS_BTN2, KC_NO,
+                                    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_MS_BTN1,     KC_TRNS,          KC_NO
   ),
   // command layer
   //  offer cmd based combination keys on the left and symbols on the right,
@@ -51,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // KC_BSPC provides backspace in normal cases, when two hands are on the keyboard
   // LGUI(KC_SPC) is for mac spotlight search
   // two KC_NO can be used later, left of LGUI(KC_Z) and right of LGUI(KC_SPC)
-  [1] = LAYOUT_split_3x6_3(
+  [2] = LAYOUT_split_3x6_3(
     LGUI(KC_W),       LALT(LSFT(LGUI(KC_V))),   LGUI(KC_S),   LGUI(LSFT(KC_P)), LGUI(KC_R), LGUI(KC_T),   KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        KC_NO,   LGUI(KC_BSPC),
     LGUI(KC_TAB),     LGUI(KC_A),               KC_TAB,       LGUI(KC_F),       KC_ESC,     LGUI(KC_K),   KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCOLON,
     LSFT(KC_TAB),     LGUI(KC_Z),               LGUI(KC_X),   LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),   KC_BSPC,      KC_LBRC,      KC_RBRC,              KC_LCBR,        KC_RCBR, KC_PIPE,
@@ -74,15 +81,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // LALT(KC_LEFT) and LALT(KC_RGHT) go left and right faster
   // LGUI(KC_I) open workspace switcher in mac
   // KC_END go to the end of text
-  [2] = LAYOUT_split_3x6_3(
-     LCTL(LGUI(KC_Q)),  KC_NO,              KC_2,               KC_3,           KC_4,     KC_5,     LSFT(LGUI(KC_N)), KC_NO,          KC_UP,               KC_NO,         TO(4),             LGUI(KC_W),
+  [3] = LAYOUT_split_3x6_3(
+     LCTL(LGUI(KC_Q)),  KC_NO,              KC_2,               KC_3,           KC_4,     KC_5,     LSFT(LGUI(KC_N)), TO(0),          KC_UP,               TO(1),         KC_NO,             LGUI(KC_W),
      KC_1,              KC_EXLM,            KC_AT,              KC_HASH,        KC_DLR,   KC_PERC,  KC_HOME,          KC_LEFT,        KC_DOWN,             KC_RGHT,       LGUI(KC_Y),        KC_END,
-     KC_NO,             LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   LALT(KC_BSPACE),  LALT(KC_LEFT),  TD(FINDER_KEYS),     LALT(KC_RGHT), LALT(LGUI(KC_V)),  LGUI(KC_DOWN),
+     TO(4),             LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   LALT(KC_BSPACE),  LALT(KC_LEFT),  TD(FINDER_KEYS),     LALT(KC_RGHT), LALT(LGUI(KC_V)),  LGUI(KC_DOWN),
                                                                 KC_NO,          KC_NO,    MO(6),    KC_NO,            KC_NO,          KC_NO
   ),
   // nums
-  [3] = LAYOUT_split_3x6_3(
-
+  [4] = LAYOUT_split_3x6_3(
       LGUI(LSFT(KC_W)), KC_NO,          KC_NO,          LGUI(LSFT(KC_5)),   KC_NO,              KC_NO,  KC_PGUP,   KC_7, KC_8,   KC_9, KC_NO,           KC_NO,
       KC_NO,            KC_NO,          LGUI(KC_LBRC),  LGUI(LSFT(KC_4)),   LGUI(KC_RBRC),      KC_NO,  KC_PGDN,   KC_4, KC_5,   KC_6, KC_NO,           KC_BSLS,
       LGUI(KC_Q),       KC_NO,          KC_NO,          LGUI(LSFT(KC_3)),   KC_NO,              KC_NO,  KC_NO,     KC_1, KC_2,   KC_3, LGUI(KC_MINUS),  LGUI(KC_PLUS),
@@ -90,30 +96,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   //one hand
   //this layer is not up to date
-  [4] = LAYOUT_split_3x6_3(
+  [5] = LAYOUT_split_3x6_3(
       TO(0),      LGUI(KC_A), LGUI(KC_W), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),     KC_NO,          LGUI(KC_UP),    LGUI(KC_U),     KC_UP,      LGUI(KC_O), KC_NO,      KC_BSPC,
       LGUI(KC_A), KC_LSFT,    KC_LGUI,    LGUI(KC_C),         LALT(LGUI(KC_V)), LGUI(KC_V),     KC_X,           KC_LEFT,        KC_DOWN,    KC_RGHT,    LGUI(KC_Z), KC_NO,
       KC_NO,      LGUI(KC_Z), KC_X,       KC_HASH,            KC_ENT,           LGUI(KC_BSPC),  LGUI(KC_Z),     LGUI(KC_BSPC),  KC_DOWN,    KC_UP,      KC_NO,      LGUI(KC_DOWN),
                               KC_NO,      KC_NO,              KC_SPC,           KC_SPC,         KC_NO,          KC_NO
   ),
   //window layer
-  [5] = LAYOUT_split_3x6_3(
-  //,--------------------------------------.    ,--------------------------------------------|
-      KC_NO,              KC_NO,                  KC_NO,                  LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       LALT(LSFT(KC_Z)),     LGUI(KC_GRV), LGUI(KC_U),       LGUI(KC_I),   LGUI(KC_O),       KC_NO,      KC_NO,
-  //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LALT(LSFT(KC_ENT)), LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)),   KC_NO,        LALT(LSFT(KC_J)), KC_NO,        LALT(LSFT(KC_K)), KC_NO,      KC_NO,
-  //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-      LSFT(LALT(KC_M)),   LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_T)),     LGUI(KC_Q),   KC_NO,            KC_NO,        KC_NO,            LGUI(KC_H), LGUI(KC_N),
-  //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-                                                                          KC_NO,                  KC_NO,                  KC_NO,                KC_NO,        KC_NO,            KC_NO
-                  //`--------------------------'  `----------------------'
-  ),
-  //mouse layer
   [6] = LAYOUT_split_3x6_3(
-      KC_NO,              KC_NO,                  KC_NO,      KC_NO,          KC_NO,          KC_NO,    KC_NO,    KC_NO,          KC_MS_UP,     KC_NO,          KC_NO,  KC_NO,
-      KC_NO,              KC_NO,                  KC_ESC,     KC_MS_BTN2,     KC_MS_BTN1,     KC_NO,    KC_NO,    KC_MS_LEFT,     KC_MS_DOWN,   KC_MS_RIGHT,    KC_NO,  KC_MS_WH_DOWN,
-      KC_NO,              KC_NO,                  KC_NO,      KC_MS_WH_LEFT,  KC_MS_WH_RIGHT, KC_NO,    KC_NO,    KC_MS_WH_LEFT,  KC_ESC,       KC_MS_WH_RIGHT, KC_NO,  KC_MS_WH_UP,
-                                                              KC_NO,          KC_NO,          KC_NO,    KC_NO,    KC_NO,          KC_NO
+      KC_NO,              KC_NO,                  KC_NO,                  LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       LALT(LSFT(KC_Z)),     LGUI(KC_GRV), LGUI(KC_U),       LGUI(KC_I),   LGUI(KC_O),       KC_NO,      KC_NO,
+      LALT(LSFT(KC_ENT)), LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)),   KC_NO,        LALT(LSFT(KC_J)), KC_NO,        LALT(LSFT(KC_K)), KC_NO,      KC_NO,
+      LSFT(LALT(KC_M)),   LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_T)),     LGUI(KC_Q),   KC_NO,            KC_NO,        KC_NO,            LGUI(KC_H), LGUI(KC_N),
+                                                                          KC_NO,                  KC_NO,                  KC_NO,                KC_NO,        KC_NO,            KC_NO
   )
 };
 
