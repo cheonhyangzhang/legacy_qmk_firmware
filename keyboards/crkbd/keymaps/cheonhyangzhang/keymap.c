@@ -37,9 +37,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
  //mouse layer
   [1] = LAYOUT_split_3x6_3(
-      KC_TRNS,    KC_TRNS,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,          KC_TRNS,          KC_MS_UP,     KC_TRNS,        KC_NO,      KC_TRNS,
-      KC_NO,      KC_NO,    KC_NO,  KC_NO,    KC_SPC,   KC_NO,    KC_MS_WH_DOWN,  KC_MS_LEFT,       KC_MS_DOWN,   KC_MS_RIGHT,    KC_TRNS,    TO(0),
-      KC_TRNS,    KC_NO,    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_MS_WH_UP,    KC_MS_WH_RIGHT,   KC_NO,        KC_MS_WH_LEFT,  KC_MS_BTN2, KC_NO,
+      KC_TRNS,    KC_TRNS,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,          KC_NO,            KC_MS_UP,     KC_NO,          KC_NO,      KC_TRNS,
+      KC_NO,      KC_NO,    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_MS_WH_DOWN,  KC_MS_LEFT,       KC_MS_DOWN,   KC_MS_RIGHT,    KC_TRNS,    KC_NO,
+      KC_TRNS,    KC_NO,    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_MS_WH_UP,    KC_MS_WH_RIGHT,   KC_SPC,       KC_MS_WH_LEFT,  KC_MS_BTN2, KC_NO,
                                     KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_MS_BTN1,     KC_TRNS,          KC_NO
   ),
   // command layer
@@ -89,10 +89,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   // nums
   [4] = LAYOUT_split_3x6_3(
-      LGUI(LSFT(KC_W)), KC_NO,          KC_NO,          LGUI(LSFT(KC_5)),   KC_NO,              KC_NO,  KC_PGUP,   KC_7, KC_8,   KC_9, KC_NO,           KC_NO,
-      KC_NO,            KC_NO,          LGUI(KC_LBRC),  LGUI(LSFT(KC_4)),   LGUI(KC_RBRC),      KC_NO,  KC_PGDN,   KC_4, KC_5,   KC_6, KC_NO,           KC_BSLS,
-      LGUI(KC_Q),       KC_NO,          KC_NO,          LGUI(LSFT(KC_3)),   KC_NO,              KC_NO,  KC_NO,     KC_1, KC_2,   KC_3, LGUI(KC_MINUS),  LGUI(KC_PLUS),
-                                                        KC_NO,              KC_NO,              KC_NO,  KC_DOT,    KC_0, KC_NO
+      LGUI(LSFT(KC_W)), KC_NO,          KC_NO,          LGUI(LSFT(KC_5)),       KC_NO,              KC_NO,  KC_PGUP,   KC_7, KC_8,   KC_9, KC_NO,           KC_NO,
+      KC_NO,            KC_NO,          LGUI(KC_LBRC),  LGUI(LSFT(KC_4)),       LGUI(KC_RBRC),      KC_NO,  KC_PGDN,   KC_4, KC_5,   KC_6, KC_NO,           KC_BSLS,
+      LGUI(KC_Q),       KC_NO,          KC_NO,          LCTL(LGUI(LSFT(KC_4))), KC_NO,              KC_NO,  KC_NO,     KC_1, KC_2,   KC_3, LGUI(KC_MINUS),  LGUI(KC_PLUS),
+                                                        KC_NO,                  KC_NO,              KC_NO,  KC_DOT,    KC_0, KC_NO
   ),
   //one hand
   //this layer is not up to date
