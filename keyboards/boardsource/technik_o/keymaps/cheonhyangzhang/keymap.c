@@ -8,73 +8,55 @@
 
 // tap dance section start
 enum tap_dance_codes {
-    DANCE_0,
-    I_QUOT,
-    O_LSFT_QUOT,
-    CMD_T_SFT,
-    CMD_V_SHIFT,
+    FINDER_KEYS,
     MINUS_UNDERSCORE,
     EQUAL_PLUS,
-    A_CTL,
-    Z_SFT,
-    SLACK_ADDRESS,
   };
   // tap dance section end
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
   [0] = LAYOUT_ortho_4x12(
-    KC_LGUI,  KC_LALT, KC_W,  KC_E,  KC_R,    KC_T,    KC_Y,   KC_U,  TD(I_QUOT), TD(O_LSFT_QUOT),  KC_NO,    KC_BSPC,
-    KC_Q,     KC_A,    KC_S,  KC_D,  KC_F,    KC_G,    KC_H,   KC_J,  KC_K,       KC_L,             KC_ENT,   KC_P,
-    KC_LCTRL, KC_Z,    KC_X,  KC_C,  KC_V,    KC_B,    KC_N,   KC_M,  KC_COMM,    KC_DOT,           KC_SLASH, TO(4),
-    KC_NO,    KC_NO,   KC_NO, MO(3), KC_LSFT, MO(1),   KC_SPC, MO(2), KC_RSFT,    KC_NO,            KC_NO,    KC_NO
+    KC_LGUI,  KC_LALT, KC_W,  KC_E,  KC_R,    KC_T,    KC_Y,   KC_U,  KC_I,       KC_O,           KC_NO,    KC_BSPC,
+    KC_Q,     KC_A,    KC_S,  KC_D,  KC_F,    KC_G,    KC_H,   KC_J,  KC_K,       KC_L,           KC_ENT,   KC_P,
+    KC_LCTRL, KC_Z,    KC_X,  KC_C,  KC_V,    KC_B,    KC_N,   KC_M,  KC_COMM,    KC_DOT,         KC_SLASH, KC_QUOT,
+    KC_NO,    KC_NO,   KC_NO, MO(4), KC_LSFT, MO(2),   KC_SPC, MO(3), KC_NO,      KC_NO,          KC_NO,    KC_NO
   ),
   [1] = LAYOUT_ortho_4x12(
-    LGUI(KC_W),       KC_NO,      LGUI(KC_S), LGUI(LSFT(KC_P)), LGUI(KC_R), TD(CMD_T_SFT),        KC_CIRC,      KC_AMPR,    KC_LPRN,              KC_RPRN,        KC_NO,   LGUI(KC_BSPC),
-    LGUI(KC_TAB),     LGUI(KC_A), KC_TAB,     LGUI(KC_F),       KC_ESC,     TD(SLACK_ADDRESS),    KC_ASTR,      LCTL(KC_H), TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN, KC_SCOLON,
-    LGUI(LSFT(KC_4)), LGUI(KC_Z), LGUI(KC_X), LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),           KC_BSPC,      KC_LBRC,    KC_RBRC,              KC_LCBR,        KC_RCBR, KC_NO,
-    KC_NO,            KC_NO,      KC_NO,      KC_NO,            KC_NO,      KC_TRNS,              LGUI(KC_SPC), KC_NO,      KC_NO,                KC_NO,          KC_NO,   KC_NO
+      KC_TRNS,    KC_TRNS,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,          KC_NO,            KC_MS_UP,     KC_NO,          KC_NO,      KC_TRNS,
+      KC_NO,      KC_NO,    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_MS_WH_DOWN,  KC_MS_LEFT,       KC_MS_DOWN,   KC_MS_RIGHT,    KC_TRNS,    KC_NO,
+      KC_TRNS,    KC_NO,    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_MS_WH_UP,    KC_MS_WH_RIGHT,   KC_SPC,       KC_MS_WH_LEFT,  KC_MS_BTN2, KC_NO,
+      KC_NO,      KC_NO,    KC_NO,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_MS_BTN1,     KC_TRNS,          KC_NO,        KC_NO,          KC_NO,      KC_NO
   ),
   [2] = LAYOUT_ortho_4x12(
-    LCTL(LGUI(KC_Q)),        KC_NO,      KC_2,  KC_3,    KC_4,    KC_5,      LGUI(KC_GRV),    LGUI(KC_U),    KC_UP,      LGUI(KC_O),    KC_NO,      LGUI(KC_W),
-    KC_1,         KC_EXLM,    KC_AT, KC_HASH, KC_DLR,  KC_PERC,   KC_HOME,         KC_LEFT,       KC_DOWN,    KC_RGHT,       LGUI(KC_Y), LGUI(LSFT(KC_4)),
-    LCTL(KC_SPC), LGUI(KC_1), KC_NO, KC_NO,   KC_TILD, KC_GRV,    LALT(KC_BSPACE), LALT(KC_LEFT), LGUI(KC_I), LALT(KC_RGHT), KC_END,     KC_NO,
-    KC_NO,        KC_NO,      KC_NO, KC_NO,   KC_NO,   KC_NO,     KC_NO,           KC_NO,         KC_TRNS,    KC_NO,         KC_NO,      KC_NO
+    LGUI(KC_W),       LALT(LSFT(LGUI(KC_V))),   LGUI(KC_S),   LGUI(LSFT(KC_P)), LGUI(KC_R), LGUI(KC_T),   KC_CIRC,      KC_AMPR,      KC_LPRN,              KC_RPRN,        KC_NO,    LGUI(KC_BSPC),
+    LGUI(KC_TAB),     LGUI(KC_A),               KC_TAB,       LGUI(KC_F),       KC_ESC,     LGUI(KC_K),   KC_ASTR,      LCTL(KC_H),   TD(MINUS_UNDERSCORE), TD(EQUAL_PLUS), KC_COLN,  KC_SCOLON,
+    LSFT(KC_TAB),     LGUI(KC_Z),               LGUI(KC_X),   LCTL(KC_C),       LGUI(KC_C), LGUI(KC_V),   KC_BSPC,      KC_LBRC,      KC_RBRC,              KC_LCBR,        KC_RCBR,  KC_PIPE,
+    KC_NO,            KC_NO,                    KC_NO,        KC_NO,            KC_NO,      KC_NO,        LGUI(KC_SPC), MO(6),        KC_NO,                KC_NO,          KC_NO,    KC_NO
   ),
   [3] = LAYOUT_ortho_4x12(
-    //,--------------------------------------.    ,--------------------------------------------|
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_PGUP, KC_7, KC_8, KC_9, KC_NO, KC_NO,
-    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-        KC_NO, KC_NO, LGUI(KC_LBRC), KC_NO, LGUI(KC_RBRC), LGUI(KC_L),     KC_PGDN, KC_4, KC_5, KC_6, KC_PIPE, KC_BSLS,
-    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-        KC_NO, KC_NO, LGUI(KC_MINS), KC_NO, LGUI(KC_PLUS), LGUI(KC_BSPC),     KC_NO, KC_1, KC_2, KC_3, KC_NO, KC_NO,
-    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-        KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_0, KC_NO, KC_NO, KC_NO, KC_NO
-                    //`--------------------------'  `----------------------'
-    ),
-    //lefthand
-    [4] = LAYOUT_ortho_4x12(
-    //,--------------------------------------.    ,--------------------------------------------|
-        KC_LALT, LGUI(KC_Y), LGUI(KC_W), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB), LSFT(KC_MINUS),     LGUI(KC_H), LGUI(KC_U), KC_UP, LGUI(KC_O), KC_NO, KC_BSPC,
-    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-        LGUI(KC_TAB), KC_LSFT, KC_LGUI, LGUI(KC_C), LALT(LGUI(KC_V)), LGUI(KC_V),     KC_X, KC_LEFT, KC_DOWN, KC_RGHT, KC_ENT, LGUI(KC_TAB),
-    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-        LGUI(KC_A), LGUI(KC_Z), KC_X, KC_HASH, KC_ENT, LGUI(KC_BSPC),       LGUI(KC_Z), LGUI(KC_BSPC), LGUI(LSFT(KC_4)), KC_NO, KC_NO, KC_NO,
-    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-        KC_NO, KC_NO, KC_NO, TO(0), KC_TAB, KC_ESC, KC_SPC, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
-                    //`--------------------------'  `----------------------'
-    ),
-    [5] = LAYOUT_ortho_4x12(
-    //,--------------------------------------.    ,--------------------------------------------|
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,     KC_PGUP, KC_7, KC_8, KC_9, KC_NO, KC_BSPC,
-    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-        KC_NO, KC_NO, LGUI(KC_LBRC), KC_NO, LGUI(KC_RBRC), LGUI(KC_L), KC_MINUS, KC_4, KC_5, KC_6, KC_ENT, KC_TAB,
-    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-        KC_NO, KC_NO, LGUI(KC_MINS), KC_NO, LGUI(KC_PLUS), LGUI(KC_BSPC), KC_DOT, KC_1, KC_2, KC_3, KC_SLASH, LSFT(KC_TAB),
-    //|--------+--------+--------+--------+--|    |--------+--------+--------+--------+--------|
-        KC_NO, KC_NO, KC_NO, TO(0), KC_NO, KC_NO, KC_SPC, KC_0, KC_NO, KC_NO, KC_NO, KC_NO
-                    //`--------------------------'  `----------------------'
-    )
+     LCTL(LGUI(KC_Q)),  KC_NO,              KC_2,               KC_3,           KC_4,     KC_5,     LSFT(LGUI(KC_N)), TO(0),          KC_UP,              TO(1),          KC_NO,              LGUI(KC_W),
+     KC_1,              KC_EXLM,            KC_AT,              KC_HASH,        KC_DLR,   KC_PERC,  KC_HOME,          KC_LEFT,        KC_DOWN,            KC_RGHT,        LGUI(KC_Y),         KC_END,
+     TO(5),             LGUI(KC_1),         LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),   KC_TILD,  KC_GRV,   LALT(KC_BSPACE),  LALT(KC_LEFT),  TD(FINDER_KEYS),    LALT(KC_RGHT),  LALT(LGUI(KC_V)),   LGUI(KC_DOWN),
+     KC_NO,             KC_NO,              KC_NO,              KC_NO,          KC_NO,    MO(6),    KC_NO,            KC_NO,          KC_NO,              KC_NO,          KC_NO,              KC_NO
+  ),
+  [4] = LAYOUT_ortho_4x12(
+      LGUI(LSFT(KC_W)), KC_NO,          KC_NO,          LGUI(LSFT(KC_5)),       KC_NO,              KC_NO,  KC_PGUP,   KC_7, KC_8,    KC_9,   KC_NO,            KC_NO,
+      KC_NO,            KC_NO,          LGUI(KC_LBRC),  LCTL(LGUI(LSFT(KC_4))), LGUI(KC_RBRC),      KC_NO,  KC_PGDN,   KC_4, KC_5,    KC_6,   KC_NO,            KC_BSLS,
+      LGUI(KC_Q),       KC_NO,          KC_NO,          LGUI(LSFT(KC_4)),       KC_NO,              KC_NO,  KC_NO,     KC_1, KC_2,    KC_3,   LGUI(KC_MINUS),   LGUI(KC_PLUS),
+      KC_NO,            KC_NO,          KC_NO,          KC_NO,                  KC_NO,              KC_NO,  KC_DOT,    KC_0, KC_NO,   KC_NO,  KC_NO,            KC_NO
+  ),
+  [5] = LAYOUT_ortho_4x12(
+      TO(0),      LGUI(KC_A), LGUI(KC_W), LSFT(LCTL(KC_TAB)), LCTL(KC_TAB),     KC_NO,          LGUI(KC_UP),    LGUI(KC_U),     KC_UP,      LGUI(KC_O), KC_NO,      KC_BSPC,
+      LGUI(KC_A), KC_LSFT,    KC_LGUI,    LGUI(KC_C),         LALT(LGUI(KC_V)), LGUI(KC_V),     KC_X,           KC_LEFT,        KC_DOWN,    KC_RGHT,    LGUI(KC_Z), KC_NO,
+      KC_NO,      LGUI(KC_Z), KC_X,       KC_HASH,            KC_ENT,           LGUI(KC_BSPC),  LGUI(KC_Z),     LGUI(KC_BSPC),  KC_DOWN,    KC_UP,      KC_NO,      LGUI(KC_DOWN),
+      KC_NO,      KC_NO,      KC_NO,      KC_NO,              KC_NO,            KC_SPC,         KC_SPC,         KC_NO,          KC_NO,      KC_NO,      KC_NO,      KC_NO
+  ),
+  [6] = LAYOUT_ortho_4x12(
+      KC_NO,              KC_NO,                  KC_NO,                  LALT(LSFT(KC_H)),       LALT(LSFT(KC_L)),       LALT(LSFT(KC_Z)),     LGUI(KC_GRV), LGUI(KC_U),       LGUI(KC_I),   LGUI(KC_O),       KC_NO,      KC_NO,
+      LALT(LSFT(KC_ENT)), LCTL(KC_1),             LCTL(KC_2),             LCTL(KC_3),             LCTL(KC_4),             LALT(LSFT(KC_SPC)),   KC_NO,        LALT(LSFT(KC_J)), KC_NO,        LALT(LSFT(KC_K)), KC_NO,      KC_NO,
+      LSFT(LALT(KC_M)),   LCTL(LSFT(LALT(KC_1))), LCTL(LSFT(LALT(KC_2))), LCTL(LSFT(LALT(KC_3))), LCTL(LSFT(LALT(KC_4))), LALT(LSFT(KC_T)),     LGUI(KC_Q),   KC_NO,            KC_NO,        KC_NO,            LGUI(KC_H), LGUI(KC_N),
+      KC_NO,              KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                  KC_NO,                KC_NO,        KC_NO,            KC_NO,        KC_NO,            KC_NO,      KC_NO
+  )
 };
 
 // tap dance operations start
@@ -108,74 +90,38 @@ uint8_t dance_step(qk_tap_dance_state_t *state) {
     return MORE_TAPS;
 }
 
-
-void on_dance_0(qk_tap_dance_state_t *state, void *user_data);
-void dance_0_finished(qk_tap_dance_state_t *state, void *user_data);
-void dance_0_reset(qk_tap_dance_state_t *state, void *user_data);
-
-void on_dance_0(qk_tap_dance_state_t *state, void *user_data) {
-    if(state->count == 3) {
-        tap_code16(KC_Z);
-        tap_code16(KC_Z);
-        tap_code16(KC_Z);
-    }
-    if(state->count > 3) {
-        tap_code16(KC_Z);
-    }
-}
-
-void dance_0_finished(qk_tap_dance_state_t *state, void *user_data) {
-    dance_state[0].step = dance_step(state);
-    switch (dance_state[0].step) {
-        case SINGLE_TAP: register_code16(KC_Z); break;
-        case SINGLE_HOLD: register_code16(KC_LSHIFT); break;
-        case DOUBLE_TAP: register_code16(KC_Z); register_code16(KC_Z); break;
-        case DOUBLE_SINGLE_TAP: tap_code16(KC_Z); register_code16(KC_Z);
-    }
-}
-
-void dance_0_reset(qk_tap_dance_state_t *state, void *user_data) {
-    wait_ms(10);
-    switch (dance_state[0].step) {
-        case SINGLE_TAP: unregister_code16(KC_Z); break;
-        case SINGLE_HOLD: unregister_code16(KC_LSHIFT); break;
-        case DOUBLE_TAP: unregister_code16(KC_Z); break;
-        case DOUBLE_SINGLE_TAP: unregister_code16(KC_Z); break;
-    }
-    dance_state[0].step = 0;
-}
 void on_dance_1(qk_tap_dance_state_t *state, void *user_data);
 void dance_1_finished(qk_tap_dance_state_t *state, void *user_data);
 void dance_1_reset(qk_tap_dance_state_t *state, void *user_data);
 
 void on_dance_1(qk_tap_dance_state_t *state, void *user_data) {
     if(state->count == 3) {
-        tap_code16(KC_I);
-        tap_code16(KC_I);
-        tap_code16(KC_I);
+        tap_code16(LSFT(LGUI(KC_G)));
+        tap_code16(LSFT(LGUI(KC_G)));
+        tap_code16(LSFT(LGUI(KC_G)));
     }
     if(state->count > 3) {
-        tap_code16(KC_I);
+        tap_code16(LSFT(LGUI(KC_G)));
     }
 }
 
 void dance_1_finished(qk_tap_dance_state_t *state, void *user_data) {
     dance_state[1].step = dance_step(state);
     switch (dance_state[1].step) {
-        case SINGLE_TAP: register_code16(KC_I); break;
-        case SINGLE_HOLD: register_code16(KC_QUOTE); break;
-        case DOUBLE_TAP: register_code16(KC_I); register_code16(KC_I); break;
-        case DOUBLE_SINGLE_TAP: tap_code16(KC_I); register_code16(KC_I);
+        case SINGLE_TAP: register_code16(LSFT(LGUI(KC_SLASH))); break;
+        case SINGLE_HOLD: register_code16(LSFT(LGUI(KC_G))); break;
+        case DOUBLE_TAP: register_code16(LSFT(LGUI(KC_SLASH))); register_code16(LSFT(LGUI(KC_SLASH))); break;
+        case DOUBLE_SINGLE_TAP: tap_code16(LSFT(LGUI(KC_SLASH))); register_code16(LSFT(LGUI(KC_SLASH)));
     }
 }
 
 void dance_1_reset(qk_tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state[1].step) {
-        case SINGLE_TAP: unregister_code16(KC_I); break;
-        case SINGLE_HOLD: unregister_code16(KC_QUOTE); break;
-        case DOUBLE_TAP: unregister_code16(KC_I); break;
-        case DOUBLE_SINGLE_TAP: unregister_code16(KC_I); break;
+        case SINGLE_TAP: unregister_code16(LSFT(LGUI(KC_SLASH))); break;
+        case SINGLE_HOLD: unregister_code16(LGUI(KC_G)); break;
+        case DOUBLE_TAP: unregister_code16(LSFT(LGUI(KC_SLASH))); break;
+        case DOUBLE_SINGLE_TAP: unregister_code16(LSFT(LGUI(KC_SLASH))); break;
     }
     dance_state[1].step = 0;
 }
@@ -461,16 +407,9 @@ void dance_10_reset(qk_tap_dance_state_t *state, void *user_data) {
 
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-        [DANCE_0] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_0, dance_0_finished, dance_0_reset),
-        [I_QUOT] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_1, dance_1_finished, dance_1_reset),
-        [O_LSFT_QUOT] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_2, dance_2_finished, dance_2_reset),
-        [CMD_T_SFT] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_4, dance_4_finished, dance_4_reset),
-        [CMD_V_SHIFT] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_5, dance_5_finished, dance_5_reset),
+        [FINDER_KEYS] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_1, dance_1_finished, dance_1_reset),
         [MINUS_UNDERSCORE] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_6, dance_6_finished, dance_6_reset),
         [EQUAL_PLUS] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_7, dance_7_finished, dance_7_reset),
-        [A_CTL] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_8, dance_8_finished, dance_8_reset),
-        [Z_SFT] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_9, dance_9_finished, dance_9_reset),
-        [SLACK_ADDRESS] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_10, dance_10_finished, dance_10_reset),
 };
 // tap dance operations end
 

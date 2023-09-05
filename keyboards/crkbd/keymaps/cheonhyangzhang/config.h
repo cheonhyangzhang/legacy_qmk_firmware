@@ -48,17 +48,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // mouse keys settings
 #undef MOUSEKEY_DELAY
 #define MOUSEKEY_DELAY          0
+// 16 is for display with 60hz refresh rate
 #undef MOUSEKEY_INTERVAL
 #define MOUSEKEY_INTERVAL       16
 #undef MOUSEKEY_WHEEL_DELAY
 #define MOUSEKEY_WHEEL_DELAY    0
 #undef MOUSEKEY_MAX_SPEED
 // internet user recommended MOUSEKEY_MAX_SPEED 6
-#define MOUSEKEY_MAX_SPEED      6
+#define MOUSEKEY_MAX_SPEED      5
 #undef MOUSEKEY_TIME_TO_MAX
-#define MOUSEKEY_TIME_TO_MAX    64
+#define MOUSEKEY_TIME_TO_MAX    40
 // internet user recommended MOUSEKEY_MOVE_DELTA 8
 #undef MOUSEKEY_MOVE_DELTA
 #define MOUSEKEY_MOVE_DELTA     4
-
+#undef MOUSEKEY_WHEEL_TIME_TO_MAX
+#define MOUSEKEY_WHEEL_TIME_TO_MAX 20
+#undef MOUSEKEY_WHEEL_MAX_SPEED
+#define MOUSEKEY_WHEEL_MAX_SPEED 10
 
