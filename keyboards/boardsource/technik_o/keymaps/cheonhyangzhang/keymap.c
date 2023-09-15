@@ -423,7 +423,7 @@ void rgb_matrix_indicators_user(void) {
 					break;
 			case 1:
 					rgb_matrix_set_color_all(RGB_OFF);
-					rgb_matrix_set_color(2, 0, 0, 128);
+					rgb_matrix_set_color(2, 0, 255, 255);
 					break;
 			case 2:
 					rgb_matrix_set_color_all(RGB_OFF);
@@ -435,11 +435,15 @@ void rgb_matrix_indicators_user(void) {
 					break;
 			case 4:
 					rgb_matrix_set_color_all(RGB_OFF);
-					rgb_matrix_set_color(2, 0, 255, 255);
+					rgb_matrix_set_color(2, 0, 0, 128);
 					break;
 			case 5:
 					rgb_matrix_set_color_all(RGB_OFF);
-					rgb_matrix_set_color(2, RGB_YELLOW);
+					rgb_matrix_set_color(2, 255, 255, 0);
+					break;
+			case 6:
+					rgb_matrix_set_color_all(RGB_OFF);
+					rgb_matrix_set_color(2, 0, 0, 128);
 					break;
 			default:
 					rgb_matrix_set_color_all(RGB_OFF);
